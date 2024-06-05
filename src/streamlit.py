@@ -9,7 +9,7 @@ import pandas as pd
 
 
 
-openai_api_key = "sk-proj-veqPrhGQG7sGKPGK9kVCT3BlbkFJPD3T6aWXkmfT0JGxUKVa"
+openai_api_key = st.text_input("Enter openai api key")
 embedding_model = "text-embedding-ada-002"
 embedding_encoding = "cl100k_base"
 pc = Pinecone(api_key="3661dc2a-3710-4669-a187-51faaa0cc557")
