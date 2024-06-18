@@ -55,6 +55,7 @@ def main():
     st.title("Pinecone Search Application")
     
     search_text = st.text_input("Enter search text:")
+    openai_api_key=st.text_input("Enter your openai api key")
     top_k = st.number_input("Enter top_k:", min_value=1, value=5)
     
     if st.button("Search"):
