@@ -2,6 +2,8 @@ import streamlit as st
 from pinecone import Pinecone
 import re
 import pandas as pd
+from openai import OpenAI
+
 
 from pinecone_text.sparse import BM25Encoder
 
