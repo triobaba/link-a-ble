@@ -1,5 +1,5 @@
 import streamlit as st
-import pinecone
+from pinecone import Pinecone
 import re
 import pandas as pd
 
