@@ -2,7 +2,7 @@ import streamlit as st
 import pinecone
 import re
 import pandas as pd
-from upserting_pipeline import index
+
 from pinecone_text.sparse import BM25Encoder
 
 # Read the data
