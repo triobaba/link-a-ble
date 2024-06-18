@@ -6,7 +6,7 @@ import pandas as pd
 from pinecone_text.sparse import BM25Encoder
 
 # Read the data
-df = pd.read_csv('data1.csv')
+df = pd.read_csv('preprocessed_data_cleaned.csv')
 
 # Initialize BM25Encoder
 bm25 = BM25Encoder()
