@@ -1,2 +1,3 @@
 pinecone-client 
 openai
+pinecone_text.sparse
