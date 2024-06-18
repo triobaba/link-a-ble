@@ -7,7 +7,7 @@ embedding_model = "text-embedding-ada-002"
 embedding_encoding = "cl100k_base"
 max_tokens = 8000  # the maximum for text-embedding-3-small is 8191
 
-client = OpenAI(openai_api_key)
+client = OpenAI(api_key=openai_api_key)
 
 
 def get_embedding(text, model="text-embedding-3-small"):
