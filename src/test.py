@@ -13,13 +13,18 @@ df = pd.read_csv('data1.csv')
 bm25 = BM25Encoder()
 bm25.fit(df['text_chunk'])
 
-# Define the Streamlit application
-openai_api_key=st.text_input("Enter your openai api key")
+openai_api_key = st.text_input("Enter openai api key")
+embedding_model = "text-embedding-ada-002"
+embedding_encoding = "cl100k_base"
+pc = Pinecone(api_key="3661dc2a-3710-4669-a187-51faaa0cc557")
+index = pc.Index("hybridsearch")
+
+
 client = OpenAI(api_key=openai_api_key)
 
-def get_embedding(text, model="text-embedding-3-small"):
+"""def get_embedding(text, model="text-embedding-3-small"):
    text = text.replace("\n", " ")
-   return client.embeddings.create(input = [text], model=model).data[0].embedding
+   return client.embeddings.create(input = [text], model=model).data[0].embedding"""
 
 def hybrid_scale(dense, sparse, alpha: float):
     """Hybrid vector scaling using a convex combination
