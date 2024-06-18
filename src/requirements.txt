@@ -1,3 +1,4 @@
 pinecone-client 
 openai
 pinecone-text
+pinecone
