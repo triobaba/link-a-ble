@@ -22,9 +22,9 @@ index = pc.Index("hybridsearch")
 
 client = OpenAI(api_key=openai_api_key)
 
-"""def get_embedding(text, model="text-embedding-3-small"):
+def get_embedding(text, model="text-embedding-3-small"):
    text = text.replace("\n", " ")
-   return client.embeddings.create(input = [text], model=model).data[0].embedding"""
+   return client.embeddings.create(input = [text], model=model).data[0].embedding
 
 def hybrid_scale(dense, sparse, alpha: float):
     """Hybrid vector scaling using a convex combination
