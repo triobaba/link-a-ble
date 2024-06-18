@@ -14,8 +14,12 @@ bm25 = BM25Encoder()
 bm25.fit(df['text_chunk'])
 
 # Define the Streamlit application
+openai_api_key=st.text_input("Enter your openai api key")
+client = OpenAI(api_key=openai_api_key)
 
-
+def get_embedding(text, model="text-embedding-3-small"):
+   text = text.replace("\n", " ")
+   return client.embeddings.create(input = [text], model=model).data[0].embedding
 
 def hybrid_scale(dense, sparse, alpha: float):
     """Hybrid vector scaling using a convex combination
@@ -55,7 +59,7 @@ def main():
     st.title("Pinecone Search Application")
     
     search_text = st.text_input("Enter search text:")
-    openai_api_key=st.text_input("Enter your openai api key")
+   
     top_k = st.number_input("Enter top_k:", min_value=1, value=5)
     
     if st.button("Search"):
