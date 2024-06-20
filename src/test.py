@@ -75,7 +75,7 @@ def main():
             sparse = bm25.encode_queries(search_text)
 
             # Debug: Print embeddings
-            hdense, hsparse = hybrid_scale(dense, sparse, alpha=0.5)
+            hdense, hsparse = hybrid_scale(dense, sparse, alpha=0.05)
             displayed_urls = set()
             
             # Query Pinecone
