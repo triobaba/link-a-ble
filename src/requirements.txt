@@ -1,4 +1,5 @@
 pinecone-client 
 openai
 pinecone-text
+spacy
 
