@@ -77,8 +77,8 @@ def main():
                         displayed_urls.add(url)
                         score = match.get('score', 'N/A')
                         text = match.get('metadata', {}).get('text', '')
-                        chunks_with_keyword = find_keyword_chunks(text, search_text, 85)
-                        results.append({"Score": score, "Text": str(chunks_with_keyword), "URL": url})
+                        chunks_with_keyword = find_keyword_chunks(text, search_text, 100)
+                        results.append({"Score": score, "Text":chunks_with_keyword, "URL": url})
 
                     if results:
                         st.table(pd.DataFrame(results))
