@@ -77,7 +77,7 @@ def main():
                         displayed_urls.add(url)
                         score = match.get('score', 'N/A')
                         text = match.get('metadata', {}).get('text', '')
-                        chunks_with_keyword = find_keyword_chunks(text, search_text, 100)
+                        chunks_with_keyword = find_keyword_chunks(text, search_text, 85).to_str()
                         results.append({"Score": score, "Text": chunks_with_keyword, "URL": url})
 
                     if results:
