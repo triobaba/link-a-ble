@@ -1,6 +1,5 @@
 pinecone-client 
 openai
 pinecone-text
-spacy
-python -m spacy download en_core_web_sm
+spacy -m spacy download en_core_web_sm
 
