@@ -103,7 +103,7 @@ def main():
                         text = match.get('metadata', {}).get('text', '')
                         highlighted_text = ensure_keyword_in_text(text, search_text)
                         short_text = ' '.join(highlighted_text.split()[:20]) + "..."
-                        results.append({"Score": score, "Text":text, "URL": url})
+                        results.append({"Score": score, "Text": short_text, "URL": url})
 
                     st.table(results)
                 else:
