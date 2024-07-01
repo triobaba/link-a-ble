@@ -44,11 +44,11 @@ def refine_results(search_intent, text):
             {"role": "system", "content": prompt},
             {"role": "user", "content": f"content: {text}\n\nsearch intent: {search_intent}"}
         ],
-        temperature=0.2)
+        temperature=0)
     result= response.choices[0].message.content
     refined_results = []
     for line in result.split("\n"):
-        if "does not fit the search intent" not in line:
+        if "does not fit the search intent" not in line and  "does not match" not in line:
             refined_results.append(line)
     
     return "\n".join(refined_results)
@@ -64,7 +64,7 @@ def main():
     
     search_text = st.text_input("Enter search text:")
     search_intent = st.text_input("Enter your search intent")
-    top_k = st.number_input("Enter top_k:", min_value=1, value=5)
+    #top_k = st.number_input("Enter top_k:", min_value=1, value=5)
     
     openai_api_key = st.text_input("Enter OpenAI API Key:", type="password")
     global client
@@ -78,7 +78,7 @@ def main():
                 hdense, hsparse = hybrid_scale(dense, sparse, alpha=0)
 
                 query_result = index.query(
-                    top_k=top_k,
+                    top_k=6,
                     vector=hdense,
                     sparse_vector=hsparse,
                     namespace='sparse',
