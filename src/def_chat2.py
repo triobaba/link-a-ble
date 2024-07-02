@@ -48,7 +48,7 @@ def refine_results(search_intent, text):
     result= response.choices[0].message.content
     refined_results = []
     for line in result.split("\n"):
-        if "does not fit the search intent" not in line and  "does not match" not in line:
+        if "does not fit the search intent" not in line and  "does not match" not in line  and "do not match " not in line:
             refined_results.append(line)
     
     return "\n".join(refined_results)
