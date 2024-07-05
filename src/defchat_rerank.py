@@ -138,7 +138,7 @@ def main():
                         summary = refine_results(text, search_intent)
                         if is_relevant(summary, search_intent):
                             relevance_score = score_relevance(summary, search_intent)
-                            results.append({"Pinecone Score": pinecone_score, "Relevance Score": relevance_score, "AI Summary": summary,'Text': text[:70], "URL": url})
+                            results.append({"Pinecone Score": pinecone_score, "Relevance Score": relevance_score,'Text': text[:70], "URL": url})
 
                     if results:
                         results = sorted(results, key=lambda x: (-x["Relevance Score"]))
