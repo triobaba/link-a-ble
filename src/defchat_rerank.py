@@ -50,7 +50,8 @@ def refine_results(search_intent, text):
     negative_phrases = [
         "does not fit the search intent", 
         "does not match", 
-        "do not match", 
+        "do not match",
+        "no relevant results",
         "not relevant", 
         "irrelevant", 
         "no match",
