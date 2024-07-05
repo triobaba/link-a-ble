@@ -35,7 +35,7 @@ def refine_results(search_intent, text):
     prompt = (
         "You are a very helpful assistant, helping link builders find the most relevant blogs based on their question. "
         "A returned result for a keyword search would be given to you. Refine this text and only return the results that fit the search intent. "
-        "The search intent is a detailed description of what the user is looking for. Only return the results that closely fit the key aspects of the search intent. The returned result should be a summary of the result."
+        "The search intent is a detailed description of what the user is looking for. Only return the results that closely fit the key aspects of the search intent. The returned result should only contain a few words before the searched keywords in the text and a few words after it ."
         "For example, if the search intent is about the impacts of artificial intelligence, only return results that closely discuss those impacts."
     )
     response = client.chat.completions.create(
