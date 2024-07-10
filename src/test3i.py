@@ -9,7 +9,7 @@ from nltk.corpus import wordnet
 from pinecone_text.sparse import BM25Encoder
 
 # Read the data
-df = pd.read_csv('preprocessed_data_cleaned.csv')
+df = pd.read_csv('src/preprocessed_data_cleaned.csv')
 nltk.download('stopwords')
 nltk.download('wordnet')
 nltk.download('omw-1.4')
