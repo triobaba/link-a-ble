@@ -79,7 +79,7 @@ def main():
                         score = match.get('score', 'N/A')
                         text = match.get('metadata', {}).get('text', '')
                         chunks_with_keyword = find_keyword_chunks(text, search_text, 100)
-                        results.append({"Score": score, "Text": text[:70], "URL": url})
+                        results.append({"Score": score, "Text": text[:300], "URL": url})
 
                     if results:
                         st.table(pd.DataFrame(results))
