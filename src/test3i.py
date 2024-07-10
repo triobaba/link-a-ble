@@ -141,7 +141,7 @@ def remove_empty_snippets(df):
     return df_cleaned
 
 def main():
-    st.title("Pinecone Search Application")
+    st.title("Linkable Keyword Search")
     
     search_text = st.text_input("Enter search text:")
     #top_k = st.number_input("Enter top_k:", min_value=1, value=5)
