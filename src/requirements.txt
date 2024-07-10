@@ -1,3 +1,4 @@
+nltk
 fastapi==0.111.0
 openai==1.35.10
 pandas==2.2.2
